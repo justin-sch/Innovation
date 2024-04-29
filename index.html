@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto config</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+        }
+        .progress-container {
+            width: 45%; /* Breite der Balken */
+            position: relative; /* Relative Positionierung für die Trennlinie */
+        }
+        .progress-bar {
+            margin-bottom: 20px; /* Abstand zwischen den Balken */
+        }
+        
+        img {
+            max-width: 100%; /* Maximale Breite des Bildes */
+            max-height: 80vh; /* Maximale Höhe des Bildes */
+            display: block; /* Blockelement */
+            margin: 0 auto; /* Zentrierung des Bildes */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dropdown-Bereich -->
+        <div class="dropdown-container">
+            <h2>motor auswählen</h2>
+            <select id="Motor" onchange="setProgress()" class="form-control">
+                <option value="10">schlechter Antrieb</option>
+                <option value="50">Mittlerer Antrieb</option>
+                <option value="70">guter Antrieb</option>
+                <option value="100">geiler Antrieb</option>
+            </select>
+        </div>
+        <!-- Bild -->
+        <img src="http://wallsdesk.com/wp-content/uploads/2017/01/Audi-Q8-2018-Pictures.jpg" alt="Bild" />
+        <!-- Balken -->
+        <div class="progress-container">
+            <h2>Power</h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressPower">0%</div>
+            </div>
+            <h2>Speed</h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressSpeed">0%</div>
+            </div>
+            <h2>Looks</h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressDesign">0%</div>
+            </div>
+            <h2>Capability</h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressUse">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function setProgress() {
+            var valuenow = document.getElementById("progressPower").style.width;
+            valuenow = Number(valuenow.replace('%', ''));
+            var value = document.getElementById('Motor').value;
+            value = Number(value.replace('%', ''));
+            var progressBar = document.getElementById('progressPower');
+            value = valuenow + value;
+            progressBar.style.width =  value + '%';
+            progressBar.innerHTML = value + '%';
+        }
+    </script>
+</body>
+</html>
