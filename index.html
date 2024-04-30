@@ -28,7 +28,7 @@
             width: 85%; /* Breite der Balken */
             padding: 10px;
         }
-        img {
+        .Car {
             max-width: 70%; /* Reduziere die maximale Breite des Bildes auf 70% der verfügbaren Breite */
             max-height: 60vh; /* Reduziere die maximale Höhe des Bildes auf 60% der Bildschirmhöhe */
             display: block;
@@ -64,42 +64,13 @@
             /*bottom: 20px;
             right: 20px;
             */z-index: 9999;
-        }
-        
-        /*Style-Eigenschaften für die Obige Auswahl Leiste*/
-        ul.navbar {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            padding: 8px 50px; /* Adjust padding as desired */
-            margin-right: 500px; /* Add margin between links */
-            margin-top: 5px; /* Add margin between links */
-        }
-        li.nav-item {
-            float: center;
-        }
-        li.nav-item a {
-            display: block;
-            color: white;
-            text-align: left;
-            text-decoration: none;
-        }
-        li.nav-item a:hover {
-            color: black;
-        }
-        a {
-            font-size: 17px;
-        }
+        }    
     </style>
 </head>
 <body>
 
     <!--Die Obige Auswahl Leiste + Audi LOGO-->
-   
-    <ul class="navbar">
-        <img src="audinavbar.PNG" heigth="2000px" alt="">
-</ul> 
+        <img class="LOGO" src="audinavbar.PNG"  alt="" max-width="1225px" max-height="50px">
 <br><br>
 
 
@@ -118,7 +89,7 @@
             </div>
 
             <div class="dropdown-container">
-                <h2>Interrior</h2>
+                <h2>Interior</h2>
                 <select id="Interrior" onchange="setProgressInterrior()" class="form-control">
                     <option value="10">schlecht</option>
                     <option value="50">Mittel</option>
@@ -128,7 +99,7 @@
             </div>
 
             <div class="dropdown-container">
-                <h2>Exterrior</h2>
+                <h2>Exterior</h2>
                 <select id="Exterrior" onchange="setProgressExterrior()" class="form-control">
                     <option value="10">schlecht</option>
                     <option value="50">Mittel</option>
@@ -142,7 +113,7 @@
         </div>
         <!-- Bild -->
         <br><br><br>
-        <img src="https://cdn.wheel-size.com/automobile/body/audi-q8-sportback-e-tron-2023-2024-1674621478.0757058.jpg" alt="Bild" />
+        <img class="Car" src="Audi_Car.png" alt="Bild" />
         <!-- Balken -->
         <div class="progress-container">
             <h2>Power</h2>
